@@ -206,4 +206,15 @@ select {
   .sensitivity-card {
     padding: 16px;
   }
+  #bg-video {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+  opacity: 0.3; /* change this if you want it brighter/darker */
+}
+
 }

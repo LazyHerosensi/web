@@ -197,26 +197,27 @@ select:focus {
 
 /* Device Tier List Section */
 .device-tier-list {
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.85);
   padding: 40px 20px;
-  color: #fff;
   max-width: 800px;
   margin: 60px auto;
   border-radius: 12px;
   box-shadow: 0 0 15px #00ffcc66;
   font-family: 'Poppins', sans-serif;
+  color: #fff;
 }
 
 .device-tier-list h2 {
+  font-size: 2rem;
   text-align: center;
-  font-size: 28px;
   color: #00ffcc;
   margin-bottom: 20px;
 }
 
 .device-tier-list p {
   text-align: center;
-  font-size: 16px;
+  font-size: 1rem;
+  color: #ccc;
   margin-bottom: 30px;
 }
 
@@ -225,10 +226,10 @@ select:focus {
 }
 
 .tier h3 {
-  font-size: 20px;
+  font-size: 1.2rem;
   margin-bottom: 10px;
-  border-bottom: 1px solid #00ffcc44;
   padding-bottom: 5px;
+  border-bottom: 1px solid #00ffcc44;
 }
 
 .low-tier { color: #ff4444; }
@@ -241,8 +242,8 @@ select:focus {
 }
 
 .device-tier-list li {
-  margin-bottom: 6px;
-  line-height: 1.5;
+  margin-bottom: 8px;
+  color: #eee;
 }
 
 /* Footer */

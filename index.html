@@ -8,6 +8,52 @@
   <!-- Preload LCP Image -->
   <link rel="preload" as="image" href="https://backiee.com/static/wallpapers/1000x563/410808.jpg" />
 
+  <!-- Inline Critical CSS -->
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #000;
+      color: #fff;
+    }
+
+    .hero-section {
+      min-height: 100vh;
+      background: url('https://backiee.com/static/wallpapers/1000x563/410808.jpg') center/cover no-repeat;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 0 20px;
+      position: relative;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-content h1 {
+      font-size: 2rem;
+      color: #fff;
+    }
+
+    .cta-btn {
+      background: #00ffcc;
+      border: none;
+      padding: 10px 20px;
+      font-size: 1rem;
+      margin-top: 20px;
+      cursor: pointer;
+    }
+  </style>
+
   <!-- Google Fonts Preload + Async Load -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" media="all">
@@ -186,7 +232,7 @@
   }
 
   function copySensitivity() {
-    const settings = `General: ${gen.textContent}\nRed Dot: ${red.textContent}\n2x Scope: ${x2.textContent}\n4x Scope: ${x4.textContent}\nSniper: ${snp.textContent}\nFree Look: ${free.textContent}`;
+    const settings = General: ${gen.textContent}\nRed Dot: ${red.textContent}\n2x Scope: ${x2.textContent}\n4x Scope: ${x4.textContent}\nSniper: ${snp.textContent}\nFree Look: ${free.textContent};
     navigator.clipboard.writeText(settings);
     alert("Sensitivity settings copied to clipboard!");
   }
@@ -196,6 +242,9 @@
   <a href="privacy-policy.html" style="color: #00ffcc;">Privacy Policy</a><br>
   <a href="contact.html" style="color: #00ffcc;">Contact</a>
 </footer>
+
+<!-- Remaining Sections (intro, selector, tier list, sensitivity output, script, footer) stay unchanged -->
+<!-- Paste your remaining HTML content here exactly as before -->
 
 </body>
 </html>

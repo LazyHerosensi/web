@@ -18,57 +18,6 @@
   <!-- Google AdSense -->
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3670811050300402" crossorigin="anonymous"></script>
   <meta name="google-adsense-account" content="ca-pub-3670811050300402" />
-
-  <style>
-    /* Fix for layout shift on h1 */
-    .hero-section {
-      position: relative;
-      background: url('https://backiee.com/static/wallpapers/1000x563/410808.jpg') center/cover no-repeat;
-      min-height: 400px; /* Reserve height for hero section */
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      color: white;
-      font-family: 'Poppins', sans-serif;
-      text-align: center;
-    }
-
-    .hero-content {
-      min-height: 120px; /* Reserve height to avoid vertical shifts */
-    }
-
-    .hero-content h1 {
-      font-weight: 600;
-      font-size: 3rem;
-      line-height: 1;
-      /* Reserve fixed height so no layout shift when emoji font renders */
-      height: 3.5rem;
-      margin-bottom: 0.5rem;
-    }
-
-    .hero-content p {
-      font-size: 1.25rem;
-      max-width: 600px;
-      margin: 0 auto 1rem;
-      line-height: 1.4;
-    }
-
-    .cta-btn {
-      cursor: pointer;
-      padding: 12px 24px;
-      font-size: 1rem;
-      border: none;
-      border-radius: 6px;
-      background-color: #00ffcc;
-      color: #000;
-      font-weight: 600;
-      transition: background-color 0.3s ease;
-    }
-    .cta-btn:hover {
-      background-color: #00cca0;
-    }
-  </style>
 </head>
 <body>
 
@@ -93,6 +42,7 @@
 
 <!-- Hero Section -->
 <section class="hero-section">
+  <div class="hero-overlay"></div>
   <div class="hero-content">
     <h1>🔥LazyHero Sensi🔥</h1>
     <p>Unlock the perfect settings for faster headshots, precision aim, and total domination — all customized to your device and playstyle.</p>
@@ -101,13 +51,6 @@
     </button>
   </div>
 </section>
-
-<!-- The rest of your page remains unchanged -->
-<!-- ... -->
-
-</body>
-</html>
-
 
 <!-- Intro Section -->
 <section class="intro-section" style="padding: 40px 20px; text-align: center; background: #111; color: #fff;">
@@ -263,13 +206,13 @@
   }
 
   function copySensitivity() {
-    const settings = `
+    const settings = 
 General: ${document.getElementById("gen-sens").textContent}
 Red Dot: ${document.getElementById("red-sens").textContent}
 2x Scope: ${document.getElementById("2x-sens").textContent}
 4x Scope: ${document.getElementById("4x-sens").textContent}
 Sniper: ${document.getElementById("sniper-sens").textContent}
-Free Look: ${document.getElementById("free-sens").textContent}`;
+Free Look: ${document.getElementById("free-sens").textContent};
 
     navigator.clipboard.writeText(settings);
     alert("Sensitivity settings copied to clipboard!");

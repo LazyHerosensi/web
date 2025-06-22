@@ -42,12 +42,16 @@ body, html {
   position: relative;
   z-index: 2;
   max-width: 700px;
+  min-height: 120px; /* ADDED to reserve vertical space and avoid CLS */
 }
 
 .hero-content h1 {
   font-size: 3.5rem;
   color: #6600cc;
   margin-bottom: 20px;
+  height: 4.2rem; /* ADDED fixed height to avoid layout shift from emoji/font loading */
+  line-height: 1.1;
+  overflow-wrap: break-word; /* Optional, keeps long words or emojis from breaking layout */
 }
 
 .hero-content p {
@@ -269,6 +273,7 @@ footer a:hover {
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
+    height: auto; /* allow height to adjust on smaller screens */
   }
 
   .hero-content p {

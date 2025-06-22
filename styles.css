@@ -1,4 +1,6 @@
-/* Reset and Global Styles */
+/* ===================
+   Global Reset
+==================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,17 +11,23 @@ html {
   scroll-behavior: smooth;
 }
 
-body, html {
+body {
   font-family: 'Poppins', sans-serif;
   background-color: #000;
   color: #fff;
   line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Hero Section */
+/* ===================
+   Hero Section
+==================== */
 .hero-section {
-  height: 100vh;
-  background: url('https://backiee.com/static/wallpapers/1000x563/410808.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  background-image: url('https://backiee.com/static/wallpapers/1000x563/410808.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: relative;
   display: flex;
   justify-content: center;
@@ -71,7 +79,29 @@ body, html {
   background-color: #7a33cc;
 }
 
-/* Selector Section */
+/* ===================
+   Music Button
+==================== */
+.music-btn {
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  background: #6600cc;
+  color: #fff;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 6px;
+  z-index: 1000;
+  cursor: pointer;
+}
+
+.music-btn:hover {
+  background-color: #7a33cc;
+}
+
+/* ===================
+   Selector Section
+==================== */
 .selector-section {
   padding: 60px 20px;
   text-align: center;
@@ -129,7 +159,9 @@ select:focus {
   background-color: #7a33cc;
 }
 
-/* Sensitivity Section */
+/* ===================
+   Sensitivity Section
+==================== */
 .sensitivity-section {
   background-color: #000;
   padding: 60px 20px;
@@ -195,29 +227,29 @@ select:focus {
   background-color: #7a33cc;
 }
 
-/* Device Tier List Section */
+/* ===================
+   Device Tier List
+==================== */
 .device-tier-list {
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(0, 0, 0, 0.8);
   padding: 40px 20px;
+  color: #fff;
   max-width: 800px;
   margin: 60px auto;
   border-radius: 12px;
   box-shadow: 0 0 15px #00ffcc66;
-  font-family: 'Poppins', sans-serif;
-  color: #fff;
 }
 
 .device-tier-list h2 {
-  font-size: 2rem;
   text-align: center;
+  font-size: 28px;
   color: #00ffcc;
   margin-bottom: 20px;
 }
 
 .device-tier-list p {
   text-align: center;
-  font-size: 1rem;
-  color: #ccc;
+  font-size: 16px;
   margin-bottom: 30px;
 }
 
@@ -226,10 +258,10 @@ select:focus {
 }
 
 .tier h3 {
-  font-size: 1.2rem;
+  font-size: 20px;
   margin-bottom: 10px;
-  padding-bottom: 5px;
   border-bottom: 1px solid #00ffcc44;
+  padding-bottom: 5px;
 }
 
 .low-tier { color: #ff4444; }
@@ -242,11 +274,13 @@ select:focus {
 }
 
 .device-tier-list li {
-  margin-bottom: 8px;
-  color: #eee;
+  margin-bottom: 6px;
+  line-height: 1.5;
 }
 
-/* Footer */
+/* ===================
+   Footer
+==================== */
 footer {
   padding: 30px 20px;
   background-color: #111;
@@ -265,29 +299,26 @@ footer a:hover {
   text-decoration: underline;
 }
 
-/* Responsive Fixes */
+/* ===================
+   Responsive
+==================== */
 @media (max-width: 768px) {
   .hero-content h1 {
     font-size: 2.5rem;
   }
-
   .hero-content p {
     font-size: 1rem;
   }
-
   .selector-section h2,
   .sensitivity-section h2 {
     font-size: 2rem;
   }
-
   select {
     width: 100%;
   }
-
   .sensitivity-card {
     padding: 16px;
   }
-
   .cta-btn,
   .generate-btn,
   .copy-btn {

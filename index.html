@@ -2,17 +2,20 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <link rel="preload" as="image" href="https://backiee.com/static/wallpapers/1000x563/410808.jpg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Free Fire Sensitivity Pro Hub</title>
 
-  <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
-
-  <!-- Preload Hero Image (LCP) -->
+  <!-- Preload LCP Image -->
   <link rel="preload" as="image" href="https://backiee.com/static/wallpapers/1000x563/410808.jpg" />
 
-  <!-- Async CSS Load -->
+  <!-- Google Fonts Preload + Async Load -->
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" media="all">
+  <noscript>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" />
+  </noscript>
+
+  <!-- Async CSS -->
   <link rel="stylesheet" href="styles.css" media="print" onload="this.media='all'">
   <noscript><link rel="stylesheet" href="styles.css"></noscript>
 
@@ -22,7 +25,14 @@
 </head>
 <body>
 
+<!-- Music Button -->
 <button onclick="toggleMusic()" class="music-btn">▶️ Play Music</button>
+
+<!-- Background Music -->
+<audio id="bg-music" loop>
+  <source src="music.mp3" type="audio/mpeg" />
+  Your browser does not support the audio element.
+</audio>
 
 <script defer>
   function toggleMusic() {
@@ -34,12 +44,6 @@
     }
   }
 </script>
-
-<!-- Background Music (Removed autoplay for AdSense compliance) -->
-<audio id="bg-music" loop>
-  <source src="music.mp3" type="audio/mpeg" />
-  Your browser does not support the audio element.
-</audio>
 
 <!-- Hero Section -->
 <section class="hero-section">
@@ -67,7 +71,6 @@
 <section class="selector-section">
   <h2>🎮 Select Your Setup</h2>
   <p>Choose your device and playstyle to get the best Free Fire sensitivity</p>
-
   <div class="form-group">
     <select id="device">
       <option value="">Select Device Type</option>
@@ -84,7 +87,6 @@
       <option value="balanced">Balanced</option>
     </select>
   </div>
-
   <button class="generate-btn" onclick="showSensitivity()">⚙️ Show My Sensitivity</button>
 </section>
 
@@ -92,7 +94,7 @@
 <section class="device-tier-list">
   <h2>📱 Device Tier List</h2>
   <p>Not sure which tier your phone belongs to? Check the list below for help.</p>
-  <!-- Low Tier List -->
+  <!-- Low Tier -->
   <div class="tier">
     <h3 class="low-tier">🔻 Low-End Devices</h3>
     <ul>
@@ -108,7 +110,7 @@
     </ul>
   </div>
 
-  <!-- Mid Tier List -->
+  <!-- Mid Tier -->
   <div class="tier">
     <h3 class="mid-tier">🔶 Mid-Range Devices</h3>
     <ul>
@@ -125,7 +127,7 @@
     </ul>
   </div>
 
-  <!-- High Tier List -->
+  <!-- High Tier -->
   <div class="tier">
     <h3 class="high-tier">🔺 High-End Devices</h3>
     <ul>
@@ -158,72 +160,42 @@
     <div class="sensitivity-card"><span>Free Look</span><strong id="free-sens">--</strong></div>
   </div>
 
-  <button class="copy-btn" onclick="copySensitivity()">📋 Copy All Settings</button>
+  <button class="copy-btn" onclick="copySensitivity()">🗌 Copy All Settings</button>
 </section>
 
 <script defer>
   function showSensitivity() {
     const device = document.getElementById("device").value;
     const playstyle = document.getElementById("playstyle").value;
+    if (!device || !playstyle) return alert("Please select both device and playstyle.");
 
-    if (!device || !playstyle) {
-      alert("Please select both device and playstyle.");
-      return;
-    }
-
-    const sensitivityMap = {
-      low: {
-        rusher:   [120, 90, 80, 70, 60, 50],
-        support:  [95, 75, 70, 65, 55, 45],
-        sniper:   [100, 70, 65, 60, 90, 40],
-        balanced: [145, 78, 72, 66, 60, 42]
-      },
-      mid: {
-        rusher:   [130, 88, 78, 70, 60, 50],
-        support:  [135, 73, 67, 62, 55, 45],
-        sniper:   [145, 68, 62, 58, 85, 38],
-        balanced: [155, 76, 70, 64, 60, 40]
-      },
-      high: {
-        rusher:   [140, 90, 75, 68, 58, 48],
-        support:  [135, 70, 65, 60, 52, 42],
-        sniper:   [110, 65, 60, 55, 80, 35],
-        balanced: [150, 74, 68, 62, 58, 38]
-      }
+    const map = {
+      low: { rusher: [120,90,80,70,60,50], support: [95,75,70,65,55,45], sniper: [100,70,65,60,90,40], balanced: [145,78,72,66,60,42] },
+      mid: { rusher: [130,88,78,70,60,50], support: [135,73,67,62,55,45], sniper: [145,68,62,58,85,38], balanced: [155,76,70,64,60,40] },
+      high: { rusher: [140,90,75,68,58,48], support: [135,70,65,60,52,42], sniper: [110,65,60,55,80,35], balanced: [150,74,68,62,58,38] },
     };
 
-    const values = sensitivityMap[device][playstyle];
+    const v = map[device][playstyle];
+    ["gen-sens","red-sens","2x-sens","4x-sens","sniper-sens","free-sens"].forEach((id, i) => {
+      document.getElementById(id).textContent = v[i];
+    });
 
-    document.getElementById("gen-sens").textContent = values[0];
-    document.getElementById("red-sens").textContent = values[1];
-    document.getElementById("2x-sens").textContent = values[2];
-    document.getElementById("4x-sens").textContent = values[3];
-    document.getElementById("sniper-sens").textContent = values[4];
-    document.getElementById("free-sens").textContent = values[5];
-
-    const output = document.getElementById("sensitivity-output");
-    output.style.display = "block";
-    output.scrollIntoView({ behavior: "smooth" });
+    const out = document.getElementById("sensitivity-output");
+    out.style.display = "block";
+    out.scrollIntoView({ behavior: "smooth" });
   }
 
   function copySensitivity() {
-    const settings = `
-General: ${document.getElementById("gen-sens").textContent}
-Red Dot: ${document.getElementById("red-sens").textContent}
-2x Scope: ${document.getElementById("2x-sens").textContent}
-4x Scope: ${document.getElementById("4x-sens").textContent}
-Sniper: ${document.getElementById("sniper-sens").textContent}
-Free Look: ${document.getElementById("free-sens").textContent}`;
-
+    const settings = `General: ${gen.textContent}\nRed Dot: ${red.textContent}\n2x Scope: ${x2.textContent}\n4x Scope: ${x4.textContent}\nSniper: ${snp.textContent}\nFree Look: ${free.textContent}`;
     navigator.clipboard.writeText(settings);
     alert("Sensitivity settings copied to clipboard!");
   }
 </script>
 
 <footer style="text-align: center; margin-top: 50px;">
-  <a href="privacy-policy.html" style="color: #00ffcc;">Privacy Policy</a>
-  <br>
+  <a href="privacy-policy.html" style="color: #00ffcc;">Privacy Policy</a><br>
   <a href="contact.html" style="color: #00ffcc;">Contact</a>
 </footer>
+
 </body>
 </html>

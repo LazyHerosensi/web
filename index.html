@@ -8,52 +8,6 @@
   <!-- Preload LCP Image -->
   <link rel="preload" as="image" href="https://backiee.com/static/wallpapers/1000x563/410808.jpg" />
 
-  <!-- Inline Critical CSS -->
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #000;
-      color: #fff;
-    }
-
-    .hero-section {
-      min-height: 100vh;
-      background: url('https://backiee.com/static/wallpapers/1000x563/410808.jpg') center/cover no-repeat;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-      position: relative;
-    }
-
-    .hero-overlay {
-      position: absolute;
-      inset: 0;
-      background: rgba(0, 0, 0, 0.5);
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 1;
-    }
-
-    .hero-content h1 {
-      font-size: 2rem;
-      color: #fff;
-    }
-
-    .cta-btn {
-      background: #00ffcc;
-      border: none;
-      padding: 10px 20px;
-      font-size: 1rem;
-      margin-top: 20px;
-      cursor: pointer;
-    }
-  </style>
-
   <!-- Google Fonts Preload + Async Load -->
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet" media="all">
@@ -104,11 +58,11 @@
 </section>
 
 <!-- Intro Section -->
-<section class="intro-section" style="padding: 40px 20px; text-align: center; background: #111; color: #fff;">
-  <h2 style="color: #00ffcc; font-size: 2rem; margin-bottom: 15px;">🎯 What is LazyHero Sensi?</h2>
-  <p style="font-size: 1.1rem; line-height: 1.6; max-width: 800px; margin: 0 auto;">
+<section class="intro-section">
+  <h2>🎯 What is LazyHero Sensi?</h2>
+  <p>
     LazyHero Sensi helps Free Fire players unlock the best sensitivity settings based on their device and playstyle.
-    Whether you're using a low-end phone or a flagship beast, our tool gives you pro-level control for headshots, sniping, and fast movement.  
+    Whether you're using a low-end phone or a flagship beast, our tool gives you pro-level control for headshots, sniping, and fast movement.
     Stop guessing. Start dominating.
   </p>
 </section>
@@ -140,7 +94,6 @@
 <section class="device-tier-list">
   <h2>📱 Device Tier List</h2>
   <p>Not sure which tier your phone belongs to? Check the list below for help.</p>
-  <!-- Low Tier -->
   <div class="tier">
     <h3 class="low-tier">🔻 Low-End Devices</h3>
     <ul>
@@ -156,7 +109,6 @@
     </ul>
   </div>
 
-  <!-- Mid Tier -->
   <div class="tier">
     <h3 class="mid-tier">🔶 Mid-Range Devices</h3>
     <ul>
@@ -173,7 +125,6 @@
     </ul>
   </div>
 
-  <!-- High Tier -->
   <div class="tier">
     <h3 class="high-tier">🔺 High-End Devices</h3>
     <ul>
@@ -192,11 +143,10 @@
   </div>
 </section>
 
-<!-- Sensitivity Output Section -->
+<!-- Sensitivity Output -->
 <section class="sensitivity-section" id="sensitivity-output" style="display: none;">
   <h2>🎯 Your Perfect Sensitivity</h2>
   <p class="subtitle">Based on your selected device and playstyle</p>
-
   <div class="sensitivity-grid">
     <div class="sensitivity-card"><span>General</span><strong id="gen-sens">--</strong></div>
     <div class="sensitivity-card"><span>Red Dot</span><strong id="red-sens">--</strong></div>
@@ -205,8 +155,7 @@
     <div class="sensitivity-card"><span>Sniper</span><strong id="sniper-sens">--</strong></div>
     <div class="sensitivity-card"><span>Free Look</span><strong id="free-sens">--</strong></div>
   </div>
-
-  <button class="copy-btn" onclick="copySensitivity()">🗌 Copy All Settings</button>
+  <button class="copy-btn" onclick="copySensitivity()">🗜 Copy All Settings</button>
 </section>
 
 <script defer>
@@ -226,25 +175,28 @@
       document.getElementById(id).textContent = v[i];
     });
 
-    const out = document.getElementById("sensitivity-output");
-    out.style.display = "block";
-    out.scrollIntoView({ behavior: "smooth" });
+    document.getElementById("sensitivity-output").style.display = "block";
+    document.getElementById("sensitivity-output").scrollIntoView({ behavior: "smooth" });
   }
 
   function copySensitivity() {
-    const settings = General: ${gen.textContent}\nRed Dot: ${red.textContent}\n2x Scope: ${x2.textContent}\n4x Scope: ${x4.textContent}\nSniper: ${snp.textContent}\nFree Look: ${free.textContent};
+    const gen = document.getElementById("gen-sens").textContent;
+    const red = document.getElementById("red-sens").textContent;
+    const x2 = document.getElementById("2x-sens").textContent;
+    const x4 = document.getElementById("4x-sens").textContent;
+    const snp = document.getElementById("sniper-sens").textContent;
+    const free = document.getElementById("free-sens").textContent;
+
+    const settings = `General: ${gen}\nRed Dot: ${red}\n2x Scope: ${x2}\n4x Scope: ${x4}\nSniper: ${snp}\nFree Look: ${free}`;
     navigator.clipboard.writeText(settings);
     alert("Sensitivity settings copied to clipboard!");
   }
 </script>
 
-<footer style="text-align: center; margin-top: 50px;">
-  <a href="privacy-policy.html" style="color: #00ffcc;">Privacy Policy</a><br>
-  <a href="contact.html" style="color: #00ffcc;">Contact</a>
+<footer>
+  <a href="privacy-policy.html">Privacy Policy</a> | 
+  <a href="contact.html">Contact</a>
 </footer>
-
-<!-- Remaining Sections (intro, selector, tier list, sensitivity output, script, footer) stay unchanged -->
-<!-- Paste your remaining HTML content here exactly as before -->
 
 </body>
 </html>

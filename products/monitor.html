@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Gaming Monitors - LazyHeroFinds</title>
+  <style>
+    body {
+      background: #121212;
+      color: #fff;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    a {
+      text-decoration: none;
+    }
+
+    .back-btn {
+      display: inline-block;
+      margin-bottom: 20px;
+      background: #3b82f6;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-weight: bold;
+      transition: background 0.3s ease;
+    }
+
+    .back-btn:hover {
+      background: #60a5fa;
+    }
+
+    h1 {
+      color: #facc15;
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #00000055;
+      position: relative;
+    }
+
+    .card img {
+      width: 100%;
+      height: 160px;
+      object-fit: contain;
+      border-radius: 8px;
+      background: #fff;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      margin: 10px 0;
+      color: #fff;
+    }
+
+    .price {
+      color: #34d399;
+      font-weight: bold;
+    }
+
+    .old {
+      text-decoration: line-through;
+      color: #999;
+      font-size: 0.9rem;
+      margin-left: 5px;
+    }
+
+    .buy {
+      background: #f97316;
+      color: white;
+      text-decoration: none;
+      padding: 8px 12px;
+      display: inline-block;
+      margin-top: 10px;
+      border-radius: 6px;
+      transition: background 0.3s ease;
+    }
+
+    .buy:hover {
+      background: #fb923c;
+    }
+
+    .tag {
+      position: absolute;
+      top: 12px;
+      left: 12px;
+      background: #22c55e;
+      color: #000;
+      padding: 2px 8px;
+      border-radius: 8px;
+      font-size: 0.75rem;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="index.html" class="back-btn">← Back to Home</a>
+  <h1>🖥️ All Gaming Monitors</h1>
+
+  <div class="grid">
+    <!-- Monitor 1 -->
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/71WnJwxZOOL._SL1500_.jpg" alt="Gaming Monitor" />
+      <h2>MSI G244F E2 24" FHD IPS Gaming Monitor (180Hz)</h2>
+      <p class="price">₹8,999 <span class="old">₹20,000</span></p>
+      <a href="https://amzn.to/4lm4u1a" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <!-- Monitor 2 -->
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/71xc4OlTkaL._SX679_.jpg" alt="LG Monitor" />
+      <h2>LG Ultragear 24GS65F IPS FHD Monitor, 1ms, 180Hz</h2>
+      <p class="price">₹10,599 <span class="old">₹20,000</span></p>
+      <a href="https://amzn.to/4k2vQrM" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+  </div>
+
+</body>
+</html>

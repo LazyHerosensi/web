@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Gaming Accessories</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1f1f1f;
+  padding: 15px 20px;
+  border-radius: 12px;
+  margin-bottom: 25px;
+}
+
+.logo {
+  color: #facc15;
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links li a:hover {
+  color: #f97316;
+}
+
+@media (max-width: 600px) {
+  .nav-links {
+    flex-direction: column;
+    gap: 10px;
+    background: #1f1f1f;
+    padding: 10px;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    border-radius: 10px;
+    display: none; /* Hidden by default */
+  }
+
+  .navbar.responsive .nav-links {
+    display: flex;
+  }
+}
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      background: #121212;
+      color: #fff;
+      padding: 20px;
+      margin: 0;
+    }
+
+    h1 {
+      text-align: center;
+      color: #22c55e;
+      margin-bottom: 30px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+    }
+
+    .card {
+      background: #1e1e1e;
+      padding: 15px;
+      border-radius: 16px;
+      text-align: center;
+      position: relative;
+      box-shadow: 0 0 8px rgba(0,0,0,0.3);
+      transition: transform 0.2s;
+    }
+
+    .card:hover {
+      transform: scale(1.03);
+    }
+
+    .card img {
+      max-width: 100%;
+      height: 160px;
+      object-fit: contain;
+      margin-bottom: 10px;
+    }
+
+    .card h2 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+    }
+
+    .price {
+      font-size: 1.1rem;
+     color: #4ade80;
+    }
+
+    .old {
+      text-decoration: line-through;
+      color: #888;
+      font-size: 0.9rem;
+      margin-left: 8px;
+    }
+
+    .buy {
+      display: inline-block;
+      background: #f97316;
+      color: #fff;
+      padding: 8px 14px;
+      margin-top: 10px;
+      border-radius: 8px;
+      text-decoration: none;
+    }
+
+    .buy:hover {
+      background: #fb923c;
+    }
+
+    .tag {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      background: #4ade80;
+      color: #000;
+      padding: 4px 10px;
+      font-size: 0.75rem;
+      font-weight: 600;
+      border-radius: 8px;
+    }
+  </style>
+</head>
+<body>
+<nav class="navbar">
+  <div class="logo">LzazyHeroFinds</div>
+  <ul class="nav-links">
+    <li><a href="#">Home</a></li>
+    <li><a href="#">Top Picks</a></li>
+    <li><a href="#">Accessories</a></li>
+    <li><a href="#">Contact</a></li>
+  </ul>
+</nav>
+<!-- Section: Mice & Keyboards -->
+<section id="mice">
+  <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>🖱️ Mice & Keyboards</h2>
+    <a href="mice.html" target="_blank" style="background: #f97316; color: white; padding: 6px 12px; border-radius: 8px; text-decoration: none;">More ➜</a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/61RYwHoeHjL._SX679_.jpg" alt="Gaming Mouse" />
+      <h2>Logitech G102 USB Light Sync Gaming Mouse with RGB</h2>
+      <p class="price">₹1,295 <span class="old">₹2,295</span></p>
+      <a href="https://www.amazon.in/Logitech-G102-Customizable-Lighting-Programmable/dp/B08LT9BMPP?tag=lazyherosensi-21" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/51eFgb4stIL._SX679_.jpg" alt="Gaming Mouse" />
+      <h2>Ant Esports GM320 RGB Optical Wired Gaming Mouse</h2>
+      <p class="price">₹549 <span class="old">₹1,299</span></p>
+      <a href="https://amzn.to/4ekZA2a" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/81LFjhG2I0L._SX679_.jpg" alt="Gaming Mouse" />
+      <h2>Razer Deathadder Essential - 6400 DPI Sensor</h2>
+      <p class="price">₹1,437 <span class="old">₹4,499</span></p>
+      <a href="https://amzn.to/3GfHiT4" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/71Bd7w71lcL._SX679_.jpg" alt="Zebronics Combo" />
+      <h2>ZEBRONICS Transformer PRO Wireless Combo</h2>
+      <p class="price">₹1,599 <span class="old">₹3,999</span></p>
+      <a href="https://amzn.to/3ZItcAo" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/617q9MVCT9L._SX679_.jpg" alt="EvoFox Fireblade Keyboard" />
+      <h2>EvoFox Fireblade Semi-Mechanical Keyboard</h2>
+      <p class="price">₹899 <span class="old">₹1,999</span></p>
+      <a href="https://amzn.to/44j8Jnd" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+  </div>
+</section>
+<!-- Section: Graphics Cards -->
+<section id="graphics-card">
+  <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>🧠 Graphics Cards</h2>
+    <a href="gpu.html" target="_blank" style="background: #f97316; color: white; padding: 6px 12px; border-radius: 8px; text-decoration: none;">More ➜</a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="tag">Top Deals</span>
+      <img src="https://m.media-amazon.com/images/I/61AzTXUQJhL._SX522_.jpg" alt="Graphics Card" />
+      <h2>ASRock AMD Radeon RX 6500XT Phantom 4GB GDDR6</h2>
+      <p class="price">₹12,500 <span class="old">₹32,000</span></p>
+      <a href="https://amzn.to/43T6uYK" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">Top Deals</span>
+      <img src="https://m.media-amazon.com/images/I/81mwcITtHBL._SX679_.jpg" alt="Graphics Card" />
+      <h2>ASUS Dual NVIDIA GeForce RTX 3050 6GB OC Edition</h2>
+      <p class="price">₹17,990 <span class="old">₹35,000</span></p>
+      <a href="https://amzn.to/45FMdHz" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">Top Deals</span>
+      <img src="https://m.media-amazon.com/images/I/71g2Lc8urJL._SX679_.jpg" alt="Graphics Card" />
+      <h2>GIGABYTE GeForce RTX 4060 Eagle OC 8GB GDDR6</h2>
+      <p class="price">₹29,999 <span class="old">₹89,999</span></p>
+      <a href="https://amzn.to/4k7C3TA" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+  </div>
+</section>
+
+<!-- Section: Monitors -->
+<section id="monitor">
+  <div class="section-header" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+    <h2>🖥️ Gaming Monitors</h2>
+    <a href="monitor.html" target="_blank" style="background: #f97316; color: white; padding: 6px 12px; border-radius: 8px; text-decoration: none;">More ➜</a>
+  </div>
+
+  <div class="grid">
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/71WnJwxZOOL._SL1500_.jpg" alt="Gaming Monitor" />
+      <h2>MSI G244F E2 24" FHD Rapid IPS Gaming Monitor (180Hz)</h2>
+      <p class="price">₹8,999 <span class="old">₹20,000</span></p>
+      <a href="https://amzn.to/4lm4u1a" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/71xc4OlTkaL._SX679_.jpg" alt="LG Ultragear Monitor" />
+      <h2>LG Ultragear 24GS65F 24" IPS FHD Gaming Monitor (180Hz)</h2>
+      <p class="price">₹10,599 <span class="old">₹20,000</span></p>
+      <a href="https://amzn.to/4k2vQrM" class="buy" target="_blank">Buy Now ➜</a>
+    </div>
+  </div>
+</section>
+
+
+  <h1>🔥 Best Gaming Accessories</h1>
+
+  <div class="grid">
+    <!-- Zebronics Headphone Product Card -->
+    <div class="card">
+      <span class="tag">New</span>
+      <img src="https://m.media-amazon.com/images/I/71Vxdi7aFnL._SX679_.jpg" alt="Zebronics Headphone" />
+      <h2>Zebronics Headphone with Suspension Band</h2>
+      <p class="price">₹1,699 <span class="old">₹2,999</span></p>
+      <a href="https://www.amazon.in/ZEBRONICS-Headphone-Subscription-Suspension-Black/dp/B0CQRP2JN6?crid=23GGL32SQOU5G&dib=eyJ2IjoiMSJ9.tGBSFQwaeZP2oHeRku7wVrL0Ij6wGh0WNvclRdt5ClH9m4GN7O_0SCX-9GOMz3HvFgHsd0zUeETGvsXk7k-E99WhWRI8IuL_bXQr-dgqNF-_7SY72pqb8qBSScFXNJiiYSUA7X2Y7tm-mJdrc8rZ6CcF3uFA1l5WMOJErDLlM5ccgKwLwuviQpKLfNn7OjYn8TufkceHsGpmbg0ikQ91rokWdZKiGvcjxhlJu8dXOXM.hPqdexDsjMzVPLJYMMKjkz2bs6FGk93RYjEo7zG5EFk&dib_tag=se&linkCode=ll1&tag=lazyherosensi-21&linkId=24e7279996fcfa6cfee3fb0fd36db00a&language=en_IN&ref_=as_li_ss_tl" 
+         class="buy" target="_blank" rel="noopener noreferrer">Buy on Amazon ➜</a>
+    </div>
+  </div>
+<footer>
+  <p style="font-size: 0.8rem; color: #aaa;">
+    Disclaimer: As an Amazon Associate, I earn from qualifying purchases. This helps support LazyHeroFinds at no extra cost to you.
+  </p>
+</footer>
+
+</body>
+</html>

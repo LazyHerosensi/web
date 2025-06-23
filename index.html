@@ -87,12 +87,12 @@
   </style>
 </head>
 <body>
-  <a href="products/index.html" target="_blank" class="floating-button">🛒 Gaming Deals</a>
+<a href="products/index.html" target="_blank" class="floating-button">🛒 Gaming Deals</a>
 
 <style>
   .floating-button {
     position: fixed;
-    top: 20px;
+    bottom: 20px;
     left: 20px;
     background-color: #f97316;
     color: white;
@@ -110,56 +110,6 @@
     background-color: #fb923c;
   }
 </style>
-
-<!-- Music Button -->
-<button id="playMusicBtn" style="
-  position: fixed;
-  bottom: 20px;
-  left: 20px;
-  z-index: 9999;
-  background-color: #7c3aed;
-  color: white;
-  border: none;
-  padding: 10px 16px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 500;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
-">
-  🎵 Play Music
-</button>
-<audio id="backgroundMusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-  Your browser does not support the audio element.
-</audio>
-
-<script>
-  const music = document.getElementById('backgroundMusic');
-  const btn = document.getElementById('playMusicBtn');
-  let isPlaying = false;
-
-  btn.addEventListener('click', () => {
-    if (!isPlaying) {
-      music.play();
-      btn.textContent = '⏸ Pause Music';
-    } else {
-      music.pause();
-      btn.textContent = '🎵 Play Music';
-    }
-    isPlaying = !isPlaying;
-  });
-</script>
-
-<script defer>
-  function toggleMusic() {
-    const music = document.getElementById("bg-music");
-    if (music.paused) {
-      music.play();
-    } else {
-      music.pause();
-    }
-  }
-</script>
 
 </script>
 <!-- Hero Section -->
